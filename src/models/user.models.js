@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
+
 const userSchema = new mongoose.Schema(
     {
         username:{
@@ -63,7 +64,9 @@ userSchema.pre('save',async function (next){
 })
 
 userSchema.methods.isPasswordCorrect=async function (password){
-   return await  bcrypt.compare(password,this.password)
+     
+   return  bcrypt.compare(password,this.password
+   )
 }
 
 userSchema.methods.generateAccessToken=function(){

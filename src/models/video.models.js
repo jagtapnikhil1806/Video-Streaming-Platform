@@ -41,5 +41,12 @@ const videoSchema= new mongoose.Schema(
     })
 
 
+   videoSchema.methods.incrementView=async function(videoId){
+     this.views+= 1
+     return this.save()
+
+   }
+
+
 videoSchema.plugin(mongooseAggregatePaginate)
 export const Video = mongoose.model("Video",videoSchema)

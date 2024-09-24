@@ -1,5 +1,5 @@
 import dotenv from "dotenv"
-dotenv.config({ path: "./.env" });
+dotenv.config();
 
 import { app } from "./app.js"
 import { DBConnection } from "./db/index.js"
@@ -13,7 +13,6 @@ DBConnection()
     })
     app.listen(port, () => {
       console.log(`App is listening on http://localhost:${port}`)
-      
     })
 })
   .catch((err) => {
